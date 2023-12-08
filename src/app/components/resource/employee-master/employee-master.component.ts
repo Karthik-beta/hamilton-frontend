@@ -21,19 +21,32 @@ export class EmployeeMasterComponent implements OnInit {
 
 
     dummyList: any[] = [
-      {
-      employee_id: 1,
-      device_enroll_id: 'HM001',
-      employee_name: 'SURESH',
-      company: 'Casseroles',
-      location: 'CHENNAI',
-      job_type: 'PERMANENT',
-      department: 'XYZ',
-      designation: 'DEF',
-      category: 'ABC',
-      date_of_joining: '30-09-2023',
-      status: 'ACTIVE',
-      }
+        {
+            employee_id: 1,
+            device_enroll_id: '001',
+            employee_name: 'RAMESH',
+            company: 'HAMILTON',
+            location: 'CHENNAI',
+            job_type: 'PERMANENT',
+            department: 'XYZ',
+            designation: 'DEF',
+            category: 'ABC',
+            date_of_joining: '30-09-2023',
+            status: 'ACTIVE',
+            },
+            {
+            employee_id: 1,
+            device_enroll_id: '002',
+            employee_name: 'SURESH',
+            company: 'HAMILTON',
+            location: 'CHENNAI',
+            job_type: 'PERMANENT',
+            department: 'XYZ',
+            designation: 'DEF',
+            category: 'ABC',
+            date_of_joining: '30-09-2023',
+            status: 'ACTIVE',
+            }
     ];
 
 
