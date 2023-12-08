@@ -69,6 +69,7 @@ import { ShiftConfigComponent } from './components/config/shift-config/shift-con
 import { SkillMatrixComponent } from './components/config/skill-matrix/skill-matrix.component';
 import { BatchComponent } from './components/config/batch/batch.component';
 import { PoNoComponent } from './components/config/po-no/po-no.component';
+import { MachineDetailsComponent } from './components/production/machine-details/machine-details.component';
 
 
 
@@ -95,6 +96,7 @@ import { PoNoComponent } from './components/config/po-no/po-no.component';
                     { path: 'shopfloorwise', component: ProdShopfloorwiseComponent },
                     { path: 'assemblylinewise', component: ProdAssemblylinewiseComponent },
                     { path: 'plantwise', component: ProdPlantwiseComponent },
+                    { path: 'machine_details', component: MachineDetailsComponent },
 
                     // Components Breakdown
                     { path: 'alert_report', component: AlertReportComponent },

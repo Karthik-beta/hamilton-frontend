@@ -1,6 +1,6 @@
 <div class="card">
 
-    <p-table #dt1 [value]="" dataKey="id" [lazy]="true" [globalFilterFields]="['id','country.name','representative.name','status']"
+    <p-table #dt1 [value]="shiftList" dataKey="id" [lazy]="true" [globalFilterFields]="['id','country.name','representative.name','status']"
     [rowHover]="true" styleClass="p-datatable-sm p-datatable-gridlines" responsiveLayout="scroll" [showCurrentPageReport]="true" currentPageReportTemplate="{first} - {last} of {totalRecords}">
     <ng-template pTemplate="caption">
         <div class="flex justify-content-between flex-column sm:flex-row">
@@ -22,44 +22,24 @@
           <th>SHIFT END</th>
           <th>LUNCH START</th>
           <th>LUNCH END</th>
+          <th>LUNCH TIME</th>
+          <th>TEA 1</th>
+          <th>TEA 2</th>
+          <th>TOTAL HOURS</th>
           <th>OPTIONS</th>
         </tr>
     </ng-template>
-    <ng-template pTemplate="body">
+    <ng-template pTemplate="body" let-item>
         <tr>
-            <td>Shift A</td>
-            <td>6:00 </td>
-            <td>14:00 </td>
-            <td>9:00 </td>
-            <td>9:30 </td>
-            <td>
-                <div class="d-flex justify-content-center">
-                    <p-button icon="pi pi-pencil" class="mr-2"></p-button>
-                    <p-button icon="pi pi-eye" class="mr-2" severity="help"></p-button>
-                    <p-button icon="pi pi-trash" severity="danger"></p-button>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td>Shift B</td>
-            <td>14:00 </td>
-            <td>22:00 </td>
-            <td>18:00 </td>
-            <td>18:30 </td>
-            <td>
-                <div class="d-flex justify-content-center">
-                    <p-button icon="pi pi-pencil" class="mr-2"></p-button>
-                    <p-button icon="pi pi-eye" class="mr-2" severity="help"></p-button>
-                    <p-button icon="pi pi-trash" severity="danger"></p-button>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td>Shift C</td>
-            <td>22:00 </td>
-            <td>6:00 </td>
-            <td>2:00 </td>
-            <td>2:30 </td>
+            <td>{{ item.shift_name }}</td>
+            <td>{{ item.shift_start }}</td>
+            <td>{{ item.shift_end }}</td>
+            <td>{{ item.lunch_start }}</td>
+            <td>{{ item.lunch_end }}</td>
+            <td>{{ item.lunch_time }}</td>
+            <td>{{ item.tea_1 }}</td>
+            <td>{{ item.tea_2 }}</td>
+            <td>{{ item.total_hours }}</td>
             <td>
                 <div class="d-flex justify-content-center">
                     <p-button icon="pi pi-pencil" class="mr-2"></p-button>

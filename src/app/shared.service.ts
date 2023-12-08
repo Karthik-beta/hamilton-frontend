@@ -283,19 +283,19 @@ export class SharedService {
 
   // Breakdown Category
   getBreakdowncategoryList():Observable<any[]>{
-    return this.http.get<any[]>(this.APIUrl+'/breakdownCategory/');
+    return this.http.get<any[]>(this.APIUrl+'/breakdown_category/');
   }
 
   addBreakdowncategory(val:any){
-    return this.http.post(this.APIUrl+'/breakdownCategory/',val);
+    return this.http.post(this.APIUrl+'/breakdown_category/',val);
   }
 
   updateBreakdowncategory(val:any){
-    return this.http.put(this.APIUrl+'/breakdownCategory/',val);
+    return this.http.put(this.APIUrl+'/breakdown_category/',val);
   }
 
   deleteBreakdowncategory(id: number){
-    return this.http.delete(this.APIUrl+'/breakdownCategory/'+id);
+    return this.http.delete(this.APIUrl+'/breakdown_category/'+id);
   }
 
   // Sub-Breakdown Category

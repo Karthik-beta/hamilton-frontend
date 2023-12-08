@@ -87,7 +87,7 @@ export class AppMenuComponent implements OnInit {
                                 { label: 'Plant-wise', icon: 'fa-solid fa-industry', routerLink: ['/plantwise'] },
                                 { label: 'Shopfloor-wise', icon: 'fa-solid fa-building', routerLink: ['/shopfloorwise'] },
                                 { label: 'Assemblyline-wise', icon: 'fa-solid fa-cogs', routerLink: ['/assemblylinewise'] },
-                                { label: 'Machine-wise', icon: 'fa-solid fa-cog', routerLink: ['/machinewise'] },
+                                { label: 'Machine-wise', icon: 'fa-solid fa-cog', routerLink: ['/machine_details'] },
                                 { label: 'Production Info', icon: 'fa-solid fa-table', routerLink: ['/prod_info'] }
                             ]
                         },

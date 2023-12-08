@@ -64,6 +64,10 @@ export class ProdMachinewiseComponent implements OnInit{
 
     barOptions: any;
 
+    bar2Chart: any;
+
+    bar2Options: any;
+
     stateOptions: any[] = [
         { label: 'Show', value: 'true' },
         { label: 'Hide', value: 'false' }
@@ -242,6 +246,85 @@ export class ProdMachinewiseComponent implements OnInit{
         };
 
         this.barOptions = {
+            indexAxis: 'y',
+            maintainAspectRatio: false,
+            aspectRatio: 3.5,
+            plugins: {
+                legend: {
+                    // display: false,
+                    labels: {
+                        color: textColor
+                    },
+                datalabels: {
+                    display: true,
+                    color: textColor
+                }
+                }
+            },
+            scales: {
+                x: {
+                    stacked: true,
+                    ticks: {
+                        color: textColorSecondary,
+                        font: {
+                            weight: 500
+                        }
+                    },
+                    grid: {
+                        color: surfaceBorder,
+                        drawBorder: false
+                    }
+                },
+                y: {
+                    stacked: true,
+                    ticks: {
+                        color: textColorSecondary
+                    },
+                    grid: {
+                        color: surfaceBorder,
+                        drawBorder: false
+                    }
+                }
+            }
+        };
+
+        this.bar2Chart = {
+            labels: [''],
+            datasets: [
+                {
+                    label: 'Resetting',
+                    backgroundColor: documentStyle.getPropertyValue('--indigo-500'),
+                    borderColor: documentStyle.getPropertyValue('--indigo-500'),
+                    data: [25]
+                },
+                {
+                    label: 'Engineering',
+                    backgroundColor: documentStyle.getPropertyValue('--yellow-400'),
+                    borderColor: documentStyle.getPropertyValue('--yellow-400'),
+                    data: [15]
+                },
+                {
+                    label: 'Elect Maint',
+                    backgroundColor: documentStyle.getPropertyValue('--blue-400'),
+                    borderColor: documentStyle.getPropertyValue('--blue-400'),
+                    data: [20]
+                },
+                {
+                    label: 'Quality',
+                    backgroundColor: documentStyle.getPropertyValue('--purple-400'),
+                    borderColor: documentStyle.getPropertyValue('--purple-400'),
+                    data: [10]
+                },
+                {
+                    label: 'Mech Maint',
+                    backgroundColor: documentStyle.getPropertyValue('--pink-400'),
+                    borderColor: documentStyle.getPropertyValue('--pink-400'),
+                    data: [30]
+                }
+            ]
+        };
+
+        this.bar2Options = {
             indexAxis: 'y',
             maintainAspectRatio: false,
             aspectRatio: 3.5,

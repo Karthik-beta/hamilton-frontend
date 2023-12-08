@@ -37,6 +37,7 @@ import { ToggleButtonModule } from 'primeng/togglebutton';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { DividerModule } from 'primeng/divider';
 import { DockModule } from 'primeng/dock';
+import { ProgressBarModule } from 'primeng/progressbar';
 
 
 import { MaterialComponent } from './components/wip/material/material.component';
@@ -102,6 +103,7 @@ import { SkillMatrixComponent } from './components/config/skill-matrix/skill-mat
 import { BatchComponent } from './components/config/batch/batch.component';
 import { PoNoComponent } from './components/config/po-no/po-no.component';
 import { ShiftConfigComponent } from './components/config/shift-config/shift-config.component';
+import { MachineDetailsComponent } from './components/production/machine-details/machine-details.component';
 
 
 
@@ -120,7 +122,7 @@ import { ShiftConfigComponent } from './components/config/shift-config/shift-con
         ProductRecipeComponent, BreakdownComponent, SubBreakdownComponent, DepartmentComponent, DesignationComponent,
         QualityDashboardComponent, ProdPlantwiseComponent, ProdAssemblylinewiseComponent, OeeReportComponent, ProdPlanReportComponent,
         ProdLineConfigComponent, ProdAndonReportComponent, DailyInfoComponent, MonthlyInfoComponent, QualityManagementReportComponent,
-        ProdInfoComponent, SkillMatrixComponent, BatchComponent, PoNoComponent, ShiftConfigComponent,
+        ProdInfoComponent, SkillMatrixComponent, BatchComponent, PoNoComponent, ShiftConfigComponent, MachineDetailsComponent,
     ],
     imports: [
         AppRoutingModule,
@@ -148,6 +150,7 @@ import { ShiftConfigComponent } from './components/config/shift-config/shift-con
         SelectButtonModule,
         DividerModule,
         DockModule,
+        ProgressBarModule,
     ],
     providers: [
         { provide: LocationStrategy, useClass: HashLocationStrategy },
