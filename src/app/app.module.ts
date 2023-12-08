@@ -104,6 +104,7 @@ import { BatchComponent } from './components/config/batch/batch.component';
 import { PoNoComponent } from './components/config/po-no/po-no.component';
 import { ShiftConfigComponent } from './components/config/shift-config/shift-config.component';
 import { MachineDetailsComponent } from './components/production/machine-details/machine-details.component';
+import { QcCheckTypeComponent } from './components/config/qc-check-type/qc-check-type.component';
 
 
 
@@ -122,7 +123,7 @@ import { MachineDetailsComponent } from './components/production/machine-details
         ProductRecipeComponent, BreakdownComponent, SubBreakdownComponent, DepartmentComponent, DesignationComponent,
         QualityDashboardComponent, ProdPlantwiseComponent, ProdAssemblylinewiseComponent, OeeReportComponent, ProdPlanReportComponent,
         ProdLineConfigComponent, ProdAndonReportComponent, DailyInfoComponent, MonthlyInfoComponent, QualityManagementReportComponent,
-        ProdInfoComponent, SkillMatrixComponent, BatchComponent, PoNoComponent, ShiftConfigComponent, MachineDetailsComponent,
+        ProdInfoComponent, SkillMatrixComponent, BatchComponent, PoNoComponent, ShiftConfigComponent, MachineDetailsComponent, QcCheckTypeComponent,
     ],
     imports: [
         AppRoutingModule,

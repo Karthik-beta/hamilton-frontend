@@ -70,6 +70,7 @@ import { SkillMatrixComponent } from './components/config/skill-matrix/skill-mat
 import { BatchComponent } from './components/config/batch/batch.component';
 import { PoNoComponent } from './components/config/po-no/po-no.component';
 import { MachineDetailsComponent } from './components/production/machine-details/machine-details.component';
+import { QcCheckTypeComponent } from './components/config/qc-check-type/qc-check-type.component';
 
 
 
@@ -173,6 +174,7 @@ import { MachineDetailsComponent } from './components/production/machine-details
                     { path: 'skill_matrix', component: SkillMatrixComponent },
                     { path: 'batch', component: BatchComponent },
                     { path: 'po_no', component: PoNoComponent },
+                    { path: 'QC_check_types', component: QcCheckTypeComponent },
                 ]
             },
             { path: 'auth', loadChildren: () => import('./demo/components/auth/auth.module').then(m => m.AuthModule) },
