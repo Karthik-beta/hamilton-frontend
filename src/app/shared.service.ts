@@ -7,9 +7,9 @@ import { Observable, BehaviorSubject } from 'rxjs';
 })
 export class SharedService {
 
-    // private APIUrl = 'http://localhost:8000';
+    private APIUrl = 'http://localhost:8000';
 
-    private APIUrl = 'http://13.126.36.86:8000';
+    // private APIUrl = 'http://13.126.36.86:8000';
 
   constructor(private http:HttpClient) { }
 
@@ -364,6 +364,16 @@ export class SharedService {
 
   deleteDesignation(id: number){
     return this.http.delete(this.APIUrl+'/designation/'+id);
+  }
+
+  // Dashboard Cards
+  getDashCardCount():Observable<any[]>{
+    return this.http.get<any[]>(this.APIUrl+'/dash_card_count');
+  }
+
+  // Production Stats
+  getProductionStats():Observable<any[]>{
+    return this.http.get<any[]>(this.APIUrl+'/production_stats')
   }
 
 }

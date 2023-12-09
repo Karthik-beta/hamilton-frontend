@@ -6,6 +6,8 @@ import { Subscription } from 'rxjs';
 import { LayoutService } from 'src/app/layout/service/app.layout.service';
 
 import { SharedService } from 'src/app/shared.service';
+import { timer } from 'rxjs';
+import { switchMap, distinctUntilChanged } from 'rxjs/operators';
 
 @Component({
     templateUrl: './dashboard.component.html',
@@ -33,6 +35,11 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
     barQualityOptions: any;
 
+    plantCount: number;
+    shopfloorCount: number;
+    assemblylineCount: number;
+    machineCount: number;
+
     subscription!: Subscription;
 
     constructor(private productService: ProductService, public layoutService: LayoutService, private service:SharedService) {
@@ -43,6 +50,9 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
     ngOnInit() {
         this.initChart();
+
+        this.dashCardsCount();
+
         this.productService.getProductsSmall().then(data => this.products = data);
 
         this.items = [
@@ -320,6 +330,29 @@ export class DashboardComponent implements OnInit, OnDestroy {
         this.service.getMostOrderedProducts().subscribe((data: any) => {
             this.mostOrderedProducts = data.most_ordered_products; // Assuming your API response has a 'most_ordered_products' property
         });
+    }
+
+    // dashCardsCount() {
+    //     this.service.getDashCardCount().subscribe((data: any) => {
+    //         this.plantCount = data.plant_count;
+    //         this.shopfloorCount = data.shopfloor_count;
+    //         this.assemblylineCount = data.assemblyline_count;
+    //         this.machineCount = data.machine_count;
+    //     })
+    // }
+
+    dashCardsCount() {
+        timer(0, 10000)  // Emit an initial value immediately and then every 10 seconds
+            .pipe(
+                switchMap(() => this.service.getDashCardCount()),  // Switch to the new observable every 10 seconds
+                distinctUntilChanged()  // Only emit when the data changes
+            )
+            .subscribe((data: any) => {
+                this.plantCount = data.plant_count;
+                this.shopfloorCount = data.shopfloor_count;
+                this.assemblylineCount = data.assemblyline_count;
+                this.machineCount = data.machine_count;
+            });
     }
 
 }

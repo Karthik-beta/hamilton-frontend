@@ -8,12 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class ShiftSkillComponent implements OnInit {
 
 
-    value: number[] = [1]
+    value: number[] = [1, 2, 3]
 
     cardOptions: any[] = [
-        { name: 'SUB-ASSEMBLY LINE', value: 1 },
-        { name: 'ASSEMBLY LINE', value: 2 },
-        { name: 'INSTALLATION & TESTING LINE', value: 3 }
+        { name: 'INDUCTION', value: 1 },
+        { name: 'BOTTLE', value: 2 },
+        { name: 'COOKER', value: 3 }
     ];
 
     ngOnInit(): void {
@@ -26,17 +26,14 @@ export class ShiftSkillComponent implements OnInit {
     selectedEmployeeInstallationTesting: string='';
 
     employeeOptions: string[] = [
-        'Meshak, 223044347',
-        'Ramachandra G, 305020222',
-        'Raja Shankara G, 305022167',
-        'Nagendra Swamy C G, 305021393',
+        'SURESH, 002',
         // Add more employee options here if needed
     ];
 
     dummyList1: any[] = [
         {
-            operations1: 'PL-01, Creating a DHR',
-            skill_matrix1: 'AXIAL DRIVE ASSEMBLY',
+            operations1: 'PL-01',
+            skill_matrix1: 'TEST',
             sso1: 'Krishna , 223044348',
             status1: 'P - 06:34:00',
             sub_emp1: '',
@@ -73,8 +70,8 @@ export class ShiftSkillComponent implements OnInit {
 
     dummyList2: any[] = [
         {
-            operations2: 'PL-01, Creating a DHR',
-            skill_matrix2: 'SVCT M1',
+            operations2: 'PL-01',
+            skill_matrix2: 'TEST',
             sso2: 'Sharath SB, 223098308',
             status2: 'P - 06:32:11',
             sub_emp2: '',

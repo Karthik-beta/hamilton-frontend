@@ -4,6 +4,10 @@ import { MenuItem } from 'primeng/api';
 import { TableLazyLoadEvent } from 'primeng/table';
 
 
+import { timer } from 'rxjs';
+import { switchMap, distinctUntilChanged } from 'rxjs/operators';
+
+
 @Component({
   selector: 'app-view-lmc',
   templateUrl: './view-lmc.component.html',
@@ -38,11 +42,20 @@ export class ViewLmcComponent implements OnInit {
     items: MenuItem[] = [];
 
 
+    planned: number;
+
+    processing: number;
+
+    completed: number;
+
+    transaction_today: number;
+
 
 
 
     ngOnInit(): void {
       this.refreshProdPlanList();
+      this.statsview();
 
       this.items = [
         { label: 'Import', icon: 'fas fa-file-import' },
@@ -126,6 +139,19 @@ export class ViewLmcComponent implements OnInit {
         this.ActivateDetailsLMCComp=true;
       }
 
+      statsview() {
+        timer(0, 10000)  // Emit an initial value immediately and then every 10 seconds
+            .pipe(
+                switchMap(() => this.service.getProductionStats()),  // Switch to the new observable every 10 seconds
+                distinctUntilChanged()  // Only emit when the data changes
+            )
+            .subscribe((data: any) => {
+                this.planned = data.planned;
+                this.processing = data.order_in_process;
+                this.completed = data.completed;
+                this.transaction_today = data.transactions_today;
+            });
+    }
 
 
   }

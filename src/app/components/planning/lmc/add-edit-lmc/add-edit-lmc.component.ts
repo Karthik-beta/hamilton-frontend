@@ -3,6 +3,10 @@ import { MenuItem } from 'primeng/api';
 import { SharedService } from 'src/app/shared.service';
 import { DatePipe } from '@angular/common';
 
+
+import { timer } from 'rxjs';
+import { switchMap, distinctUntilChanged } from 'rxjs/operators';
+
 @Component({
   selector: 'app-add-edit-lmc',
   templateUrl: './add-edit-lmc.component.html',
@@ -31,6 +35,14 @@ export class AddEditLmcComponent implements OnInit {
         rowsPerPageOptions: number[] = [10, 20, 30];
         loading: boolean = false;
 
+        planned: number;
+
+        processing: number;
+
+        completed: number;
+
+        transaction_today: number;
+
 
 
         @Input() lmcPlan: any;
@@ -47,20 +59,17 @@ export class AddEditLmcComponent implements OnInit {
         { name: 'CHENNAI' },
       ],
       this.shopfloor = [
-        { name: 'XYZ' },
+        { name: 'SHOPFLOOR-1' },
       ],
       this.assembly_line = [
-        { name: 'TSE' },
+        { name: 'ASSEMBLYLINE-1' },
       ],
       this.machine_id = [
-        { name: 'TSE-001' },
-        { name: 'TSE-002' },
-        { name: 'TSE-003' },
+        { name: 'SG05-250T'},
       ],
       this.shifts = [
         { name: 'Shift FS'},
         { name: 'Shift SS'},
-        { name: 'Shift NS'},
       ]
     }
 
@@ -303,6 +312,7 @@ export class AddEditLmcComponent implements OnInit {
     ngOnInit(): void {
       this.refreshProdPlanList();
       this.loadOpenjobList();
+      this.statsview();
 
 
       this.items = [
@@ -312,7 +322,7 @@ export class AddEditLmcComponent implements OnInit {
     ];
 
 
-    
+
 
     }
 
@@ -372,5 +382,18 @@ export class AddEditLmcComponent implements OnInit {
       });
     }
 
+    statsview() {
+        timer(0, 10000)  // Emit an initial value immediately and then every 10 seconds
+            .pipe(
+                switchMap(() => this.service.getProductionStats()),  // Switch to the new observable every 10 seconds
+                distinctUntilChanged()  // Only emit when the data changes
+            )
+            .subscribe((data: any) => {
+                this.planned = data.planned;
+                this.processing = data.order_in_process;
+                this.completed = data.completed;
+                this.transaction_today = data.transactions_today;
+            });
+    }
 
   }

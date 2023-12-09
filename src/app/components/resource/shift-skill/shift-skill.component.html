@@ -4,7 +4,7 @@
         <div class="card mb-0">
             <div class="flex justify-content-center">
                 <div>
-                    <span class="block text-purple-500 font-medium mb-3">SUB-ASSEMBLY LINE</span>
+                    <span class="block text-purple-500 font-medium mb-3">INDUCTION</span>
                 </div>
             </div>
             <div class="grid justify-content-center">
@@ -28,7 +28,7 @@
         <div class="card mb-0">
             <div class="flex justify-content-center">
                 <div>
-                    <span class="block text-indigo-500 font-medium mb-3">ASSEMBLY LINE</span>
+                    <span class="block text-indigo-500 font-medium mb-3">BOTTLE</span>
                 </div>
             </div>
             <div class="grid justify-content-center">
@@ -52,7 +52,7 @@
         <div class="card mb-0">
             <div class="flex justify-content-center">
                 <div>
-                    <span class="block text-blue-500 font-medium mb-3">INSTALLATION & TESTING LINE</span>
+                    <span class="block text-blue-500 font-medium mb-3">COOKER</span>
                 </div>
             </div>
             <div class="grid justify-content-center">
@@ -92,7 +92,7 @@
 
 <div class="col-12">
     <div class="card text-900" *ngIf="value.includes(1)">
-        <h6>SUB-ASSEMBLY LINE</h6>
+        <h6>INDUCTION</h6>
 
         <p-table [value]="dummyList1" [rowHover]="true" styleClass="p-datatable-sm p-datatable-gridlines" [tableStyle]="{ 'font-size': 'small' }">
             <ng-template pTemplate="header">
@@ -130,13 +130,13 @@
                 </tr>
             </ng-template>
             <ng-template pTemplate="body" let-item>
-                <tr style="white-space: nowrap;">
+                <!-- <tr style="white-space: nowrap;">
                     <td>{{ item.operations1 }}</td>
                     <td>{{ item.skill_matrix1 }}</td>
                     <td>{{ item.sso1 }}</td>
                     <td>{{ item.status1 }}</td>
                     <td>{{ item.sub_emp1 }}</td>
-                </tr>
+                </tr> -->
                 <!-- <tr style="white-space: nowrap;">
                     <td>PL-01, Creating a DHR</td>
                     <td>AXIAL DRIVE ASSEMBLY</td>
@@ -144,17 +144,17 @@
                     <td>P - 06:34:00</td>
                     <td></td>
                 </tr> -->
-                <tr style="white-space: nowrap;">
-                    <td>PL-02, Cable Tie base Assembly</td>
-                    <td>AXIAL DRIVE Testing</td>
+                <!-- <tr style="white-space: nowrap;">
+                    <td>PL-02</td>
+                    <td>TEST</td>
                     <td>Suma HC, 212437037</td>
                     <td>P - 06:35:34</td>
                     <td></td>
-                </tr>
+                </tr> -->
                 <tr style="white-space: nowrap;">
-                    <td>PL-03, Bearing Grease nipple assembly on bearing</td>
-                    <td>ORP Sub-Assembly</td>
-                    <td>Geetha BP, 305008438 <span style="font-weight: bold; color: red;">(AB)</span></td>
+                    <td>PL-01</td>
+                    <td>TEST</td>
+                    <td>RAMESH, 001 <span style="font-weight: bold; color: red;">(AB)</span></td>
                     <td *ngIf="selectedEmployeeSubAssembly; else defaultStatusCell" style="background-color:darkturquoise">
                         {{ selectedEmployeeSubAssembly }} (S)
                     </td>
@@ -166,9 +166,9 @@
                     </td>
                 </tr>
                 <tr style="white-space: nowrap;">
-                    <td>PL-04, Bearing assembly</td>
-                    <td>Console Assembly</td>
-                    <td>Nagendra Swamy C G, 305021393 <span style="font-weight: bold; color: red;">(AB)</span></td>
+                    <td>PL-02</td>
+                    <td>TEST</td>
+                    <td>RAMESH, 001<span style="font-weight: bold; color: red;">(AB)</span></td>
                     <td *ngIf="selectedEmployeeSubAssembly2; else defaultStatusCell" style="background-color:darkturquoise">
                         {{ selectedEmployeeSubAssembly2 }} (S)
                     </td>
@@ -201,7 +201,7 @@
 
 <div class="col-12">
     <div class="card" *ngIf="value.includes(2)">
-        <h6>ASSEMBLY LINE</h6>
+        <h6>BOTTLE</h6>
 
         <p-table [value]="dummyList2" [rowHover]="true" styleClass="p-datatable-sm p-datatable-gridlines" [tableStyle]="{ 'font-size': 'small' }">
             <ng-template pTemplate="header">
@@ -239,13 +239,13 @@
                 </tr>
             </ng-template>
             <ng-template pTemplate="body" let-item>
-                <tr style="white-space: nowrap;">
+                <!-- <tr style="white-space: nowrap;">
                     <td>{{ item.operations2 }}</td>
                     <td>{{ item.skill_matrix2 }}</td>
                     <td>{{ item.sso2 }}</td>
                     <td>{{ item.status2 }}</td>
                     <td>{{ item.sub_emp2 }}</td>
-                </tr>
+                </tr> -->
                 <!-- <tr style="white-space: nowrap;">
                     <td>PL-01, Creating a DHR</td>
                     <td>AXIAL DRIVE ASSEMBLY</td>
@@ -253,17 +253,17 @@
                     <td>P - 06:34:00</td>
                     <td></td>
                 </tr> -->
-                <tr style="white-space: nowrap;">
-                    <td>PL-16, SVCT M2</td>
-                    <td>SVCT M2</td>
-                    <td>Nischal M G, 223039084</td>
+                <!-- <tr style="white-space: nowrap;">
+                    <td>PL-02</td>
+                    <td>TEST</td>
+                    <td>RAMESH, 001</td>
                     <td>P - 06:31:00</td>
                     <td></td>
-                </tr>
+                </tr> -->
                 <tr style="white-space: nowrap;">
-                    <td>PL-17, SVCT M3</td>
-                    <td>SVCT M3</td>
-                    <td>Geetha BP, 305008438 <span style="font-weight: bold; color: red;">(AB)</span></td>
+                    <td>PL-01</td>
+                    <td>TEST</td>
+                    <td>RAMESH, 001<span style="font-weight: bold; color: red;">(AB)</span></td>
                     <td *ngIf="selectedEmployeeMainAssembly; else defaultStatusCell" style="background-color:darkturquoise">
                         {{ selectedEmployeeMainAssembly }} (S)
                     </td>
@@ -275,9 +275,9 @@
                     </td>
                 </tr>
                 <tr style="white-space: nowrap;">
-                    <td>PL-04, Bearing assembly</td>
-                    <td>Console Assembly</td>
-                    <td>Nagendra Swamy C G, 305021393 <span style="font-weight: bold; color: red;">(AB)</span></td>
+                    <td>PL-02</td>
+                    <td>TEST</td>
+                    <td>RAMESH, 001<span style="font-weight: bold; color: red;">(AB)</span></td>
                     <td *ngIf="selectedEmployeeSubAssembly2; else defaultStatusCell" style="background-color:darkturquoise">
                         {{ selectedEmployeeSubAssembly2 }} (S)
                     </td>
@@ -311,7 +311,7 @@
 
 <div class="col-12">
     <div class="card" *ngIf="value.includes(3)">
-        <h6>INSTALLATION & TESTING LINE</h6>
+        <h6>COOKER</h6>
 
         <p-table [value]="dummyList2" [rowHover]="true" styleClass="p-datatable-sm p-datatable-gridlines" [tableStyle]="{ 'font-size': 'small' }">
             <ng-template pTemplate="header">
@@ -349,13 +349,13 @@
                 </tr>
             </ng-template>
             <ng-template pTemplate="body" let-item>
-                <tr style="white-space: nowrap;">
+                <!-- <tr style="white-space: nowrap;">
                     <td>{{ item.operations2 }}</td>
                     <td>{{ item.skill_matrix2 }}</td>
                     <td>{{ item.sso2 }}</td>
                     <td>{{ item.status2 }}</td>
                     <td>{{ item.sub_emp2 }}</td>
-                </tr>
+                </tr> -->
                 <!-- <tr style="white-space: nowrap;">
                     <td>PL-01, Creating a DHR</td>
                     <td>AXIAL DRIVE ASSEMBLY</td>
@@ -364,24 +364,17 @@
                     <td></td>
                 </tr> -->
                 <tr style="white-space: nowrap;">
-                    <td>PL-16, SVCT M2</td>
-                    <td>SVCT M2</td>
-                    <td>Nischal M G, 223039084</td>
+                    <td>PL-01</td>
+                    <td>TEST</td>
+                    <td>SURESH, 001</td>
                     <td>P - 06:31:00</td>
                     <td></td>
                 </tr>
                 <tr style="white-space: nowrap;">
-                    <td>PL-17, SVCT M3</td>
-                    <td>SVCT M3</td>
-                    <td>Geetha BP, 305008438</td>
+                    <td>PL-02</td>
+                    <td>TEST</td>
+                    <td>SURESH, 001</td>
                     <td>P - 06:21:30</td>
-                    <td></td>
-                </tr>
-                <tr style="white-space: nowrap;">
-                    <td>PL-04, Bearing assembly</td>
-                    <td>Console Assembly</td>
-                    <td>Nagendra Swamy C G, 305021393</td>
-                    <td>P - 06:42:23</td>
                     <td></td>
                 </tr>
             </ng-template>
