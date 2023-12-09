@@ -29,7 +29,7 @@ export class ProdPlanComponent implements OnInit {
     items: MenuItem[] = [];
 
     // Set a default interval value (e.g., 5 seconds)
-    private refreshIntervalSeconds = 60;
+    private refreshIntervalSeconds = 5;
 
 
     ModalTitle:string="";
@@ -53,6 +53,7 @@ export class ProdPlanComponent implements OnInit {
     }
 
     onProdPlanAdded() {
+        this.display = false;
       this.refreshProdPlanList();
     }
 
@@ -194,47 +195,47 @@ export class ProdPlanComponent implements OnInit {
       this.refreshProdPlanList();
     }
 
-    // refreshProdPlanList() {
-    //   this.loading = true;
-
-    //   const params = {
-    //     page: this.currentPage.toString(),
-    //     page_size: this.rows.toString()
-    //   };
-
-    //   this.service.getProductionPlan(params).subscribe((data: any) => {
-    //     this.productionPlanList = data.results; // Assuming your API response has a 'results' property
-    //     this.totalRecords = data.count;   // Assuming your API response has a 'count' property
-    //     this.loading = false;
-    //   });
-    // }
-
     refreshProdPlanList() {
-        // Create an observable that emits values at a specified interval
-        const interval$ = interval(this.refreshIntervalSeconds * 1000);
+      this.loading = true;
 
-        // Use switchMap to switch to a new observable (HTTP request) each time the interval emits
-        // Use distinctUntilChanged to ensure that the HTTP request is made only if the parameters have changed
-        interval$.pipe(
-          distinctUntilChanged(),
-          switchMap(() => {
-            this.loading = true;
+      const params = {
+        page: this.currentPage.toString(),
+        page_size: this.rows.toString()
+      };
 
-            const params = {
-              page: this.currentPage.toString(),
-              page_size: this.rows.toString(),
-            };
+      this.service.getProductionPlan(params).subscribe((data: any) => {
+        this.productionPlanList = data.results; // Assuming your API response has a 'results' property
+        this.totalRecords = data.count;   // Assuming your API response has a 'count' property
+        this.loading = false;
+      });
+    }
 
-            // Use switchMap to cancel the previous HTTP request if a new interval emits
-            return this.service.getProductionPlan(params);
-          })
-        )
-        .subscribe((data: any) => {
-          this.productionPlanList = data.results; // Assuming your API response has a 'results' property
-          this.totalRecords = data.count;   // Assuming your API response has a 'count' property
-          this.loading = false;
-        });
-      }
+    // refreshProdPlanList() {
+    //     // Create an observable that emits values at a specified interval
+    //     const interval$ = interval(this.refreshIntervalSeconds * 1000);
+
+    //     // Use switchMap to switch to a new observable (HTTP request) each time the interval emits
+    //     // Use distinctUntilChanged to ensure that the HTTP request is made only if the parameters have changed
+    //     interval$.pipe(
+    //       distinctUntilChanged(),
+    //       switchMap(() => {
+    //         this.loading = true;
+
+    //         const params = {
+    //           page: this.currentPage.toString(),
+    //           page_size: this.rows.toString(),
+    //         };
+
+    //         // Use switchMap to cancel the previous HTTP request if a new interval emits
+    //         return this.service.getProductionPlan(params);
+    //       })
+    //     )
+    //     .subscribe((data: any) => {
+    //       this.productionPlanList = data.results; // Assuming your API response has a 'results' property
+    //       this.totalRecords = data.count;   // Assuming your API response has a 'count' property
+    //       this.loading = false;
+    //     });
+    //   }
 
 
 
