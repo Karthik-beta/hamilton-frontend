@@ -17,6 +17,8 @@ export class MachineDetailsComponent {
             shopfloor: 'SHOPFLOOR-1',
             assemblyline: 'ASSEMBLYLINE-1',
             machine_id: 'SG05-250T',
+            start_prod: '2023-12-11, 08 - 20 (11)',
+            end_prod: '2024-02-09, 08 - 20 (6.0)',
             state: 'ACTIVE',
             activity: 78
         },
