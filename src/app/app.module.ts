@@ -72,7 +72,7 @@ import { EvacuationComponent } from './components/resource/evacuation/evacuation
 import { DailyReportComponent } from './components/resource/daily-report/daily-report.component';
 import { QualityManagementComponent } from './components/quality/quality-management/quality-management.component';
 
-import { DetailsLmcComponent } from './components/planning/lmc/details-lmc/details-lmc.component';
+
 import { OeeComponent } from './components/report/oee/oee.component';
 import { TodoComponent } from './components/report/todo/todo.component';
 import { ConfigurationComponent } from './components/config/configuration/configuration.component';
@@ -119,7 +119,7 @@ import { ProdStatsComponent } from './components/microfunctions/prod-stats/prod-
         ProdShopfloorwiseComponent, ShiftComponent, AlertReportComponent, ShopfloorwiseComponent, CategorywiseComponent,
         AlertComponent, AssemblylineAnalysisComponent, MachinewiseAnalysisComponent, CallHelpComponent, ShiftSkillComponent,
         EmployeeMasterComponent, ShiftStrengthComponent, MonthlyReportComponent, EvacuationComponent, DailyReportComponent,
-        QualityManagementComponent, DetailsLmcComponent, OeeComponent, TodoComponent, ConfigurationComponent, CompanyComponent,
+        QualityManagementComponent, OeeComponent, TodoComponent, ConfigurationComponent, CompanyComponent,
         LocationComponent, ShopfloorComponent, AssemblylineComponent, SubAssemblylineComponent, MachineidComponent, ProductidComponent,
         ProductRecipeComponent, BreakdownComponent, SubBreakdownComponent, DepartmentComponent, DesignationComponent,
         QualityDashboardComponent, ProdPlantwiseComponent, ProdAssemblylinewiseComponent, OeeReportComponent, ProdPlanReportComponent,

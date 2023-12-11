@@ -4,7 +4,7 @@ import { InputDemoComponent } from './inputdemo.component';
 
 @NgModule({
 	imports: [RouterModule.forChild([
-		{ path: '', component: InputDemoComponent }
+		// { path: '', component: InputDemoComponent }
 	])],
 	exports: [RouterModule]
 })

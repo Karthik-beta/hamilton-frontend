@@ -7,9 +7,9 @@ import { Observable, BehaviorSubject } from 'rxjs';
 })
 export class SharedService {
 
-    // private APIUrl = 'http://localhost:8000';
+    private APIUrl = 'http://localhost:8000';
 
-    private APIUrl = 'http://13.126.36.86:8000';
+    // private APIUrl = 'http://13.126.36.86:8000';
 
   constructor(private http:HttpClient) { }
 
@@ -76,6 +76,10 @@ export class SharedService {
   }
 
   // LMC Component
+  getAllMachineSlotConfig():Observable<any[]>{
+    return this.http.get<any[]>(`${this.APIUrl}/lmcSlotConfigViewAll/`);
+  }
+
   getLineMachineConfig(params: any): Observable<any> {
     let httpParams = new HttpParams();
 
