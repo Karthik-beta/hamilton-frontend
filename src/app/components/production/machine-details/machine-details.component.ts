@@ -14,28 +14,28 @@ export class MachineDetailsComponent {
     machineList = [
         {
             plant: 'CHENNAI',
-            shopfloor: 'XYZ',
-            assemblyline: 'TSE',
-            machine_id: 'TSE-001',
+            shopfloor: 'SHOPFLOOR-1',
+            assemblyline: 'ASSEMBLYLINE-1',
+            machine_id: 'SG05-250T',
             state: 'ACTIVE',
-            activity: 45
+            activity: 78
         },
-        {
-            plant: 'CHENNAI',
-            shopfloor: 'XYZ',
-            assemblyline: 'TSE',
-            machine_id: 'TSE-002',
-            state: 'IDLE',
-            activity: 32
-        },
-        {
-            plant: 'CHENNAI',
-            shopfloor: 'XYZ',
-            assemblyline: 'TSE',
-            machine_id: 'TSE-003',
-            state: 'BREAKDOWN',
-            activity: 87
-        }
+        // {
+        //     plant: 'CHENNAI',
+        //     shopfloor: 'XYZ',
+        //     assemblyline: 'TSE',
+        //     machine_id: 'TSE-002',
+        //     state: 'IDLE',
+        //     activity: 32
+        // },
+        // {
+        //     plant: 'CHENNAI',
+        //     shopfloor: 'XYZ',
+        //     assemblyline: 'TSE',
+        //     machine_id: 'TSE-003',
+        //     state: 'BREAKDOWN',
+        //     activity: 87
+        // }
     ]
 
 
