@@ -106,6 +106,7 @@ import { ShiftConfigComponent } from './components/config/shift-config/shift-con
 import { MachineDetailsComponent } from './components/production/machine-details/machine-details.component';
 import { QcCheckTypeComponent } from './components/config/qc-check-type/qc-check-type.component';
 import { ProdStatsComponent } from './components/microfunctions/prod-stats/prod-stats.component';
+import { FoodPriceComponent } from './components/canteen/food-price/food-price.component';
 
 
 
@@ -124,7 +125,7 @@ import { ProdStatsComponent } from './components/microfunctions/prod-stats/prod-
         ProductRecipeComponent, BreakdownComponent, SubBreakdownComponent, DepartmentComponent, DesignationComponent,
         QualityDashboardComponent, ProdPlantwiseComponent, ProdAssemblylinewiseComponent, OeeReportComponent, ProdPlanReportComponent,
         ProdLineConfigComponent, ProdAndonReportComponent, DailyInfoComponent, MonthlyInfoComponent, QualityManagementReportComponent,
-        ProdInfoComponent, SkillMatrixComponent, BatchComponent, PoNoComponent, ShiftConfigComponent, MachineDetailsComponent, QcCheckTypeComponent, ProdStatsComponent,
+        ProdInfoComponent, SkillMatrixComponent, BatchComponent, PoNoComponent, ShiftConfigComponent, MachineDetailsComponent, QcCheckTypeComponent, ProdStatsComponent, FoodPriceComponent,
     ],
     imports: [
         AppRoutingModule,

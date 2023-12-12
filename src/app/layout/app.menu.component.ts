@@ -78,6 +78,26 @@ export class AppMenuComponent implements OnInit {
                     },
                 ]
             },
+
+            {
+                label: 'CANTEEN MANAGEMENT',
+                items: [
+                    {
+                        label: 'Canteen Management', icon: 'fa-solid fa-utensils',
+                        items: [
+                            {
+                                label: 'Dashboard', icon: 'fa-solid fa-tachometer',
+                                items: [
+                                    { label: 'Food Items', icon: 'fa-solid fa-bowl-food', routerLink: ['/canteen'] },
+                                    // { label: 'Shift Strength', icon: 'fa-solid fa-users', routerLink: ['/shift_strength'] },
+                                    // { label: 'Evacuation', icon: 'fa-solid fa-right-from-bracket', routerLink: ['/evacuation']},
+                                ]
+                            },
+                        ]
+                    }
+                ]
+            },
+
             {
                 label: 'Production Andon',
                 items: [

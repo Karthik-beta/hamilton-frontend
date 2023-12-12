@@ -1,0 +1,63 @@
+.price-badge {
+    border-radius: var(--border-radius);
+    padding: .25em .5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: .3px;
+}
+
+.price-badge {
+    &.price-tag {
+        background: black;
+        color: white;
+    }
+
+    &.status-outofstock {
+        background: #FFCDD2;
+        color: #C63737;
+    }
+
+    &.status-lowstock {
+        background: #FEEDAF;
+        color: #8A5340;
+    }
+}
+
+.recent-badge {
+    &.status-Completed {
+        background: #C8E6C9;
+        color: #256029;
+    }
+
+    &.status-unqualified {
+        background: #FFCDD2;
+        color: #C63737;
+    }
+
+    &.status-Processing {
+        background: #FEEDAF;
+        color: #8A5340;
+    }
+
+    &.status-New {
+        background: #B3E5FC;
+        color: #23547B;
+    }
+
+    &.status-Planned {
+        background: #ECCFFF;
+        color: #694382;
+    }
+
+    &.status-proposal {
+        background: #FFD8B2;
+        color: #805B36;
+    }
+}
+
+
+
+// .tag {
+//     background-color: black;
+// }

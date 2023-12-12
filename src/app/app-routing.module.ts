@@ -71,6 +71,7 @@ import { BatchComponent } from './components/config/batch/batch.component';
 import { PoNoComponent } from './components/config/po-no/po-no.component';
 import { MachineDetailsComponent } from './components/production/machine-details/machine-details.component';
 import { QcCheckTypeComponent } from './components/config/qc-check-type/qc-check-type.component';
+import { FoodPriceComponent } from './components/canteen/food-price/food-price.component';
 
 
 
@@ -153,6 +154,12 @@ import { QcCheckTypeComponent } from './components/config/qc-check-type/qc-check
                     { path: 'order_disturb', component:OrderDisturbComponent },
                     { path: 'inprocess_reject', component:InprocessRejectComponent },
                     { path: 'ecr', component:EcrComponent },
+
+
+
+
+                    // Canteen
+                    { path: 'canteen', component: FoodPriceComponent },
 
 
 
