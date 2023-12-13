@@ -44,7 +44,7 @@
                         <span class="price-badge price-tag">₹ {{ item.price }} /-</span>
                     </div>
                     <div>
-                        <p-button label="Add" icon="pi pi-plus" size="small"></p-button>
+                        <p-button label="Add" icon="pi pi-plus" size="small" (click)="addToCart(item)"></p-button>
                     </div>
                 </div>
                 </div>
@@ -60,7 +60,47 @@
 
             <div class="justify-content-between">
 
-                <tr class="col-12" style="width:100%;">
+                <!-- Display selected items -->
+                <table>
+                    <tr *ngFor="let selectedItem of selectedItems; let i = index" class="col-12 justify-content-between" style="width:100%;">
+                        <td class="col-4">
+                          <span class="text-800 font-bold text-lg lg:text-lg">{{ selectedItem.name }}</span>
+                        </td>
+                        <td class="col-4">
+                          <div class="grid align-items-center">
+                            <div>
+                                <i class="fa-solid fa-minus mr-2 clickable-item" (click)="removeItem(i)"></i>
+                            </div>
+                            <div>
+                              <span class="text-800 font-bold text-lg lg:text-lg text-center">{{ selectedItem.quantity }}</span>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-plus ml-2 clickable-item"  (click)="increaseQuantity(i)"></i>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="col-4">
+                          <span class="text-800 justify-content-center font-bold text-lg lg:text-lg">
+                            ₹ {{ selectedItem.price * selectedItem.quantity }}
+                          </span>
+                        </td>
+                      </tr>
+
+                      <p-toast></p-toast>
+                        <p-confirmDialog [style]="{width: '50vw'}"></p-confirmDialog>
+                      <!-- Display total -->
+                      <tr class="col-12 clickable-item" style="width:100%; background-color: aquamarine; border-radius: 10px;" (click)="confirmPay()">
+                        <td class="col-4">
+                          <span class="text-800 font-bold text-lg lg:text-lg text-center">Pay Now</span>
+                        </td>
+                        <td class="col-4"></td>
+                        <td class="col-4" style="align-items: center; vertical-align: middle;">
+                          <span class="text-800 justify-content-center font-bold text-lg lg:text-lg">₹ {{ value }}</span>
+                        </td>
+                      </tr>
+                </table>
+
+                <!-- <tr class="col-12" style="width:100%;">
                     <td class="col-4">
                         <span class="text-800 font-bold text-lg lg:text-lg text-center">Veg Spring Roll</span>
                     </td>
@@ -97,12 +137,12 @@
                         <span class="text-800 font-bold text-lg lg:text-lg text-center">Pay Now</span>
                     </td>
                     <td class="col-4">
-                        <!-- <input id="disabled-input" type="text" pInputText [disabled]="true" [(ngModel)]="value" /> -->
+
                     </td>
                     <td class="col-4" style="align-items: center; vertical-align: middle;">
                         <span class="text-800 justify-content-center font-bold text-lg lg:text-lg">₹ 190</span>
                     </td>
-                </tr>
+                </tr> -->
 
             </div>
 

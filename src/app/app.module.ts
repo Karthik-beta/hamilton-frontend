@@ -38,6 +38,8 @@ import { SelectButtonModule } from 'primeng/selectbutton';
 import { DividerModule } from 'primeng/divider';
 import { DockModule } from 'primeng/dock';
 import { ProgressBarModule } from 'primeng/progressbar';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ToastModule } from 'primeng/toast';
 
 
 import { MaterialComponent } from './components/wip/material/material.component';
@@ -125,7 +127,8 @@ import { FoodPriceComponent } from './components/canteen/food-price/food-price.c
         ProductRecipeComponent, BreakdownComponent, SubBreakdownComponent, DepartmentComponent, DesignationComponent,
         QualityDashboardComponent, ProdPlantwiseComponent, ProdAssemblylinewiseComponent, OeeReportComponent, ProdPlanReportComponent,
         ProdLineConfigComponent, ProdAndonReportComponent, DailyInfoComponent, MonthlyInfoComponent, QualityManagementReportComponent,
-        ProdInfoComponent, SkillMatrixComponent, BatchComponent, PoNoComponent, ShiftConfigComponent, MachineDetailsComponent, QcCheckTypeComponent, ProdStatsComponent, FoodPriceComponent,
+        ProdInfoComponent, SkillMatrixComponent, BatchComponent, PoNoComponent, ShiftConfigComponent, MachineDetailsComponent,
+        QcCheckTypeComponent, ProdStatsComponent, FoodPriceComponent,
     ],
     imports: [
         AppRoutingModule,
@@ -154,6 +157,8 @@ import { FoodPriceComponent } from './components/canteen/food-price/food-price.c
         DividerModule,
         DockModule,
         ProgressBarModule,
+        ConfirmDialogModule,
+        ToastModule,
     ],
     providers: [
         { provide: LocationStrategy, useClass: HashLocationStrategy },
