@@ -1,76 +1,89 @@
 <div class="grid">
 
-    <div class="col-12 lg:col-6 xl:col-3" *ngFor="let item of foodItems">
-        <div class="card mb-0 text-center">
-            <div class="flex justify-content-center align-items-center">
-                <img src="assets/demo/images/food/{{ item.image }}.jpg" width="180em" height="150em" style="vertical-align: top"/>
-            </div>
-            <!-- <span class="image-text">IDLI</span> -->
-            <h5 class="text-900">{{ item.name }}</h5>
-            <div class="col-12 tag">
-                <span class="price-badge price-tag">₹ {{ item.price }} /-</span>
-            </div>
-            <p-button label="Add" icon="pi pi-plus" size="small"></p-button>
-        </div>
-    </div>
+    <div class="col-12 lg:col-6 xl:col-8">
 
-</div>
+        <div class="grid">
 
-
-<div class="card title-card-with-time">
-    <h2 class="text-800 font-bold text-xl lg:text-xl">Hi Ryan, SI12345B</h2>
-    <h4 class="text-800 font-bold text-xl lg:text-xl">Currency Limit : ₹ 2000 /-</h4>
-
-    <div class="card">
-
-        <div class="col-12 justify-content-center">
-
-            <tr class="col-12" style="width:100%;">
-                <td class="col-3">
-                    <span class="text-800 font-bold text-xl lg:text-xl text-center">Veg Spring Roll</span>
-                </td>
-                <td class="col-6">
-                    <div class="grid align-items-center">
-                        <div><i class="fa-solid fa-minus mr-2"></i></div>
-                        <div><input id="disabled-input" type="text" pInputText [disabled]="true" [(ngModel)]="value" /></div>
-                        <div><i class="fa-solid fa-plus ml-2"></i></div>
+            <div class="col-12 lg:col-6 xl:col-4" *ngFor="let item of foodItems">
+                <div class="card mb-0 text-center">
+                    <div class="flex justify-content-center align-items-center">
+                        <img src="assets/demo/images/food/{{ item.image }}.jpg" width="180em" height="150em" style="vertical-align: top"/>
                     </div>
-                </td>
-                <td class="col-3">
-                    <span class="text-800 justify-content-center font-bold text-xl lg:text-xl">₹ 90</span>
-                </td>
-            </tr>
-
-            <tr class="col-12" style="width:100%;">
-                <td class="col-3">
-                    <span class="text-800 font-bold text-xl lg:text-xl text-center">Dosa</span>
-                </td>
-                <td class="col-6">
-                    <div class="grid align-items-center">
-                        <div><i class="fa-solid fa-minus mr-2"></i></div>
-                        <div><input id="disabled-input" type="text" pInputText [disabled]="true" [(ngModel)]="value" /></div>
-                        <div><i class="fa-solid fa-plus ml-2"></i></div>
+                    <!-- <span class="image-text">IDLI</span> -->
+                    <h5 class="text-900">{{ item.name }}</h5>
+                    <div class="col-12 tag">
+                        <span class="price-badge price-tag">₹ {{ item.price }} /-</span>
                     </div>
-                </td>
-                <td class="col-3">
-                    <span class="text-800 justify-content-center font-bold text-xl lg:text-xl">₹ 100</span>
-                </td>
-            </tr>
-
-            <tr class="col-12" style="width:100%; background-color: aquamarine;">
-                <td class="col-3">
-                    <span class="text-800 font-bold text-xl lg:text-xl text-center">Pay Now</span>
-                </td>
-                <td class="col-3">
-                    <!-- <input id="disabled-input" type="text" pInputText [disabled]="true" [(ngModel)]="value" /> -->
-                </td>
-                <td class="col-6">
-                    <span class="text-800 justify-content-center font-bold text-xl lg:text-xl">₹ 190</span>
-                </td>
-            </tr>
+                    <p-button label="Add" icon="pi pi-plus" size="small"></p-button>
+                </div>
+            </div>
 
         </div>
 
     </div>
 
+    <div class="col-4 lg:col-6 xl:col-4">
+        <div class="card title-card-with-time">
+
+            <h2 class="text-800 font-bold text-xl lg:text-xl">Hi Ryan, SI12345B</h2>
+            <h4 class="text-800 font-bold text-xl lg:text-xl">Currency Limit : ₹ 2000 /-</h4>
+
+        </div>
+
+        <div class="card flex justify-content-center align-items-center">
+
+            <div class="justify-content-between">
+
+                <tr class="col-12" style="width:100%;">
+                    <td class="col-4">
+                        <span class="text-800 font-bold text-xl lg:text-xl text-center">Veg Spring Roll</span>
+                    </td>
+                    <td class="col-4">
+                        <div class="grid align-items-center">
+                            <div><i class="fa-solid fa-minus mr-2"></i></div>
+                            <div><input id="disabled-input" type="text" pInputText [disabled]="true" [(ngModel)]="value" /></div>
+                            <div><i class="fa-solid fa-plus ml-2"></i></div>
+                        </div>
+                    </td>
+                    <td class="col-4">
+                        <span class="text-800 justify-content-center font-bold text-xl lg:text-xl">₹ 90</span>
+                    </td>
+                </tr>
+
+                <tr class="col-12" style="width:100%;">
+                    <td class="col-4">
+                        <span class="text-800 font-bold text-xl lg:text-xl text-center">Dosa</span>
+                    </td>
+                    <td class="col-4">
+                        <div class="grid align-items-center">
+                            <div><i class="fa-solid fa-minus mr-2"></i></div>
+                            <div><input id="disabled-input" type="text" pInputText [disabled]="true" [(ngModel)]="value" /></div>
+                            <div><i class="fa-solid fa-plus ml-2"></i></div>
+                        </div>
+                    </td>
+                    <td class="col-4">
+                        <span class="text-800 justify-content-center font-bold text-xl lg:text-xl">₹ 100</span>
+                    </td>
+                </tr>
+
+                <tr class="col-12" style="width:100%; background-color: aquamarine;">
+                    <td class="col-4">
+                        <span class="text-800 font-bold text-xl lg:text-xl text-center">Pay Now</span>
+                    </td>
+                    <td class="col-4">
+                        <!-- <input id="disabled-input" type="text" pInputText [disabled]="true" [(ngModel)]="value" /> -->
+                    </td>
+                    <td class="col-4">
+                        <span class="text-800 justify-content-center font-bold text-xl lg:text-xl">₹ 190</span>
+                    </td>
+                </tr>
+
+            </div>
+
+        </div>
+        </div>
+
 </div>
+
+
+
