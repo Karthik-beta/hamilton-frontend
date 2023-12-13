@@ -88,7 +88,7 @@ export class AppMenuComponent implements OnInit {
                             {
                                 label: 'Dashboard', icon: 'fa-solid fa-tachometer',
                                 items: [
-                                    { label: 'Cafeteria', icon: 'fa-solid fa-bowl-food', routerLink: ['/canteen'] },
+                                    { label: 'Cafeteria', icon: 'fa-solid fa-utensils', routerLink: ['/canteen'] },
                                     { label: 'Tuck Shop', icon: 'fa-solid fa-shop' },
                                     { label: 'Stationary', icon: 'fa-solid fa-book' },
                                     { label: 'Medical Store', icon: 'fa-solid fa-house-medical' },

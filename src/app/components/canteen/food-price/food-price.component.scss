@@ -72,7 +72,13 @@ td {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 2em; /* Adjust the width as needed */
+    width: 3em; /* Adjust the width as needed */
     height: 2em; /* Adjust the height as needed */
     border: .1em solid #000;
-  }
+}
+
+
+.student-details {
+    display: flex;
+    justify-content: space-between;
+}
