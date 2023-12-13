@@ -83,7 +83,7 @@ export class AppMenuComponent implements OnInit {
                 label: 'UTILIZATION MANAGEMENT',
                 items: [
                     {
-                        label: 'Utilization Management', icon: 'fa-solid fa-utensils',
+                        label: 'Utilization Management', icon: 'fa-solid fa-cogs',
                         items: [
                             {
                                 label: 'Dashboard', icon: 'fa-solid fa-tachometer',
