@@ -3,14 +3,14 @@
     padding: .25em .5rem;
     text-transform: uppercase;
     font-weight: 700;
-    font-size: 16px;
+    font-size: 12px;
     letter-spacing: .3px;
     text-align: center;
 }
 
 .price-badge {
     &.price-tag {
-        background: black;
+        background: #256029;
         color: white;
     }
 
@@ -67,3 +67,12 @@
 td {
     border: none;
 }
+
+.square-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2em; /* Adjust the width as needed */
+    height: 2em; /* Adjust the height as needed */
+    border: .1em solid #000;
+  }

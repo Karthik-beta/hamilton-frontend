@@ -11,9 +11,16 @@
                         <img src="assets/demo/images/food/{{ item.image }}.jpg" width="180em" height="150em" style="vertical-align: top"/>
                     </div>
                     <!-- <span class="image-text">IDLI</span> -->
-                    <h5 class="text-900">{{ item.name }}</h5>
-                    <div class="col-12 tag">
-                        <span class="price-badge price-tag">₹ {{ item.price }} /-</span>
+                    <div class="col-12 mt-2">
+                        <div class="grid justify-content-between">
+                            <div class="flex align-items-center">
+                                <!-- <h5 class="text-900">{{ item.name }}</h5> -->
+                                <span class="text-800 font-bold text-xl lg:text-xl text-center">{{ item.name }}</span>
+                            </div>
+                        <div class="flex align-items-center">
+                            <span class="price-badge price-tag">₹ {{ item.price }} /-</span>
+                        </div>
+                        </div>
                     </div>
                     <p-button label="Add" icon="pi pi-plus" size="small"></p-button>
                 </div>
@@ -27,8 +34,8 @@
     <div class="col-4 lg:col-6 xl:col-4">
         <div class="card title-card-with-time">
 
-            <h2 class="text-800 font-bold text-xl lg:text-xl">Hi Ryan, SI12345B</h2>
-            <h4 class="text-800 font-bold text-xl lg:text-xl">Currency Limit : ₹ 2000 /-</h4>
+            <h2 class="text-800 font-bold text-xl lg:text-xl">Hi Ramesh, 001</h2>
+            <h4 class="text-800 font-bold text-xl lg:text-xl">Current Limit : ₹ 2000 /-</h4>
 
         </div>
 
@@ -38,45 +45,45 @@
 
                 <tr class="col-12" style="width:100%;">
                     <td class="col-4">
-                        <span class="text-800 font-bold text-xl lg:text-xl text-center">Veg Spring Roll</span>
+                        <span class="text-800 font-bold text-lg lg:text-lg text-center">Veg Spring Roll</span>
                     </td>
                     <td class="col-4">
                         <div class="grid align-items-center">
                             <div><i class="fa-solid fa-minus mr-2"></i></div>
-                            <div><input id="disabled-input" type="text" pInputText [disabled]="true" [(ngModel)]="value" /></div>
+                            <div class="square-box"><span class="text-800 font-bold text-lg lg:text-lg text-center">1</span></div>
                             <div><i class="fa-solid fa-plus ml-2"></i></div>
                         </div>
                     </td>
                     <td class="col-4">
-                        <span class="text-800 justify-content-center font-bold text-xl lg:text-xl">₹ 90</span>
+                        <span class="text-800 justify-content-center font-bold text-lg lg:text-lg">₹ 90</span>
                     </td>
                 </tr>
 
                 <tr class="col-12" style="width:100%;">
                     <td class="col-4">
-                        <span class="text-800 font-bold text-xl lg:text-xl text-center">Dosa</span>
+                        <span class="text-800 font-bold text-lg lg:text-lg text-center">Dosa</span>
                     </td>
                     <td class="col-4">
                         <div class="grid align-items-center">
                             <div><i class="fa-solid fa-minus mr-2"></i></div>
-                            <div><input id="disabled-input" type="text" pInputText [disabled]="true" [(ngModel)]="value" /></div>
+                            <div class="square-box"><span class="text-800 font-bold text-lg lg:text-lg text-center">1</span></div>
                             <div><i class="fa-solid fa-plus ml-2"></i></div>
                         </div>
                     </td>
                     <td class="col-4">
-                        <span class="text-800 justify-content-center font-bold text-xl lg:text-xl">₹ 100</span>
+                        <span class="text-800 justify-content-center font-bold text-lg lg:text-lg">₹ 100</span>
                     </td>
                 </tr>
 
                 <tr class="col-12" style="width:100%; background-color: aquamarine;">
                     <td class="col-4">
-                        <span class="text-800 font-bold text-xl lg:text-xl text-center">Pay Now</span>
+                        <span class="text-800 font-bold text-lg lg:text-lg text-center">Pay Now</span>
                     </td>
                     <td class="col-4">
                         <!-- <input id="disabled-input" type="text" pInputText [disabled]="true" [(ngModel)]="value" /> -->
                     </td>
-                    <td class="col-4">
-                        <span class="text-800 justify-content-center font-bold text-xl lg:text-xl">₹ 190</span>
+                    <td class="col-4" style="align-items: center; vertical-align: middle;">
+                        <span class="text-800 justify-content-center font-bold text-lg lg:text-lg">₹ 190</span>
                     </td>
                 </tr>
 
