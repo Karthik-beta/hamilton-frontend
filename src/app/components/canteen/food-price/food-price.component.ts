@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ConfirmationService, MessageService, ConfirmEventType } from 'primeng/api';
 
 @Component({
@@ -7,12 +7,37 @@ import { ConfirmationService, MessageService, ConfirmEventType } from 'primeng/a
   styleUrls: ['./food-price.component.scss'],
   providers: [ConfirmationService, MessageService]
 })
-export class FoodPriceComponent {
+export class FoodPriceComponent implements OnInit{
 
     constructor(private confirmationService: ConfirmationService, private messageService: MessageService) {}
 
     selectedItems: any[] = [];
     value: number = 0;
+
+    employees: any;
+
+    selectedEmp: any;
+
+    selectedEmployeeDetails: any = null;
+
+    ngOnInit() {
+        this.employees =[
+            { name: 'Ramesh' },
+            { name: 'Suresh' },
+            { name: 'Mahesh' },
+            { name: 'Naresh' },
+            { name: 'Umesh' },
+            { name: 'Dinesh' },
+        ]
+    }
+
+    // Function to update selected employee details when an employee is chosen from the dropdown
+    onEmployeeSelect() {
+        // Find the selected employee details from the 'employeeDetails' list
+        this.selectedEmployeeDetails = this.employeeDetails.find(
+        (emp) => emp.name === this.selectedEmp.name
+        );
+    }
 
     addToCart(item: any) {
         const existingItem = this.selectedItems.find(selectedItem => selectedItem.name === item.name);
@@ -69,6 +94,14 @@ export class FoodPriceComponent {
             accept: () => {
                 this.messageService.add({ severity: 'success', summary: 'Confirmed', detail: 'Thank You' });
                 this.messageService.add({ severity: 'info', summary: 'Info', detail: 'Handover coupon to cafeteria and collect your food' });
+
+                // Clear selected items and employee details
+                // this.clearSelections();
+
+                // Delay for 1 seconds (1000 milliseconds) before clearing selections
+                setTimeout(() => {
+                    this.clearSelections();
+                }, 1000);
             },
             reject: (type) => {
                 switch (type) {
@@ -85,6 +118,58 @@ export class FoodPriceComponent {
             }
         });
     }
+
+    clearSelections() {
+        this.selectedItems = [];
+        this.value = 0;
+        this.selectedEmp = null;
+        this.selectedEmployeeDetails = null;
+    }
+
+    employeeDetails = [
+        {
+            id: 1,
+            name: 'Ramesh',
+            department: '9th',
+            section: 'A',
+            currency: 200
+        },
+        {
+            id: 2,
+            name: 'Suresh',
+            department: '9th',
+            section: 'A',
+            currency: 200
+        },
+        {
+            id: 3,
+            name: 'Mahesh',
+            department: '9th',
+            section: 'A',
+            currency: 200
+        },
+        {
+            id: 4,
+            name: 'Naresh',
+            department: '9th',
+            section: 'A',
+            currency: 200
+        },
+        {
+            id: 5,
+            name: 'Umesh',
+            department: '9th',
+            section: 'A',
+            currency: 200
+        },
+        {
+            id: 6,
+            name: 'Dinesh',
+            department: '9th',
+            section: 'A',
+            currency: 200
+        },
+    ]
 
     foodItems = [
         {

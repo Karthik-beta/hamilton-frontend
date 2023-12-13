@@ -1,22 +1,28 @@
 <div class="card title-card-with-time">
 
-    <h2 class="text-800 font-bold text-xl lg:text-2xl">Welcome to Cafeteria</h2>
+
+            <h2 class="text-800 font-bold text-xl lg:text-2xl">Welcome to Cafeteria</h2>
+
+            <div class="col">
+                <p-dropdown [options]="employees" [(ngModel)]="selectedEmp" (ngModelChange)="onEmployeeSelect()" optionLabel="name" [showClear]="false" placeholder="Select a City"></p-dropdown>
+            </div>
+
     <!-- <h4 class="text-800 font-bold text-xl lg:text-xl">Current Limit : ₹ 2000 /-</h4> -->
-    <div class="col-12 grid student-details">
+    <div class="col-12 grid student-details" *ngIf="selectedEmployeeDetails">
         <div class="col">
-            <span class="text-800 font-bold text-lg lg:text-lg">Student ID : SC001</span>
+            <span class="text-800 font-bold text-lg lg:text-lg">Student ID : {{ selectedEmployeeDetails.id }}</span>
         </div>
         <div class="col">
-            <span class="text-800 font-bold text-lg lg:text-lg">Name : Dinesh</span>
+            <span class="text-800 font-bold text-lg lg:text-lg">Name : {{ selectedEmployeeDetails.name }}</span>
         </div>
         <div class="col">
-            <span class="text-800 font-bold text-lg lg:text-lg">Department : 9th</span>
+            <span class="text-800 font-bold text-lg lg:text-lg">Department : {{ selectedEmployeeDetails.department }}</span>
         </div>
         <div class="col">
-            <span class="text-800 font-bold text-lg lg:text-lg">Section : A</span>
+            <span class="text-800 font-bold text-lg lg:text-lg">Section : {{ selectedEmployeeDetails.section }}</span>
         </div>
         <div class="col">
-            <span class="text-800 font-bold text-lg lg:text-lg">Currency Limit : 2000</span>
+            <span class="text-800 font-bold text-lg lg:text-lg">Currency Limit : {{ selectedEmployeeDetails.currency }}</span>
         </div>
     </div>
 
@@ -35,7 +41,7 @@
             <div class="grid">
                 <div class="col-12 lg:col-6 xl:col-4" *ngFor="let item of foodItems">
 
-                <div class="card mb-0 text-center">
+                <div class="card mb-0 text-center clickable-item" (click)="addToCart(item)">
                     <div class="flex justify-content-center align-items-center">
                         <img src="assets/demo/images/food/{{ item.image }}.jpg" width="180em" height="150em" style="vertical-align: top"/>
                     </div>
@@ -43,9 +49,9 @@
                     <div class="col-12">
                         <span class="price-badge price-tag">₹ {{ item.price }} /-</span>
                     </div>
-                    <div>
-                        <p-button label="Add" icon="pi pi-plus" size="small" (click)="addToCart(item)"></p-button>
-                    </div>
+                    <!-- <div>
+                        <p-button label="Add" icon="pi pi-plus" size="small" ></p-button>
+                    </div> -->
                 </div>
                 </div>
             </div>
