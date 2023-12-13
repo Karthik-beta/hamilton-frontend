@@ -1,107 +1,23 @@
 <div class="grid">
 
-    <div class="col-12 lg:col-6 xl:col-3">
+    <div class="col-12 lg:col-6 xl:col-3" *ngFor="let item of foodItems">
         <div class="card mb-0 text-center">
             <div class="flex justify-content-center align-items-center">
-                <img src="assets/demo/images/food/Idli.jpg" width="180em" height="150em" style="vertical-align: top"/>
+                <img src="assets/demo/images/food/{{ item.image }}.jpg" width="180em" height="150em" style="vertical-align: top"/>
             </div>
             <!-- <span class="image-text">IDLI</span> -->
-            <h6 class="text-900">Idli</h6>
+            <h5 class="text-900">{{ item.name }}</h5>
             <div class="col-12 tag">
-                <span class="price-badge price-tag">₹ 70.00 /-</span>
+                <span class="price-badge price-tag">₹ {{ item.price }} /-</span>
             </div>
+            <p-button label="Add" icon="pi pi-plus" size="small"></p-button>
         </div>
     </div>
 
-    <div class="col-12 lg:col-6 xl:col-3">
-        <div class="card mb-0 text-center">
-            <div class="flex justify-content-center align-items-center">
-                <img src="assets/demo/images/food/dosa.jpg" width="180em" height="150em" style="vertical-align: top"/>
-            </div>
-            <!-- <span class="image-text">IDLI</span> -->
-            <h6 class="text-900">Dosa</h6>
-            <div class="col-12 tag">
-                <span class="price-badge price-tag">₹ 100.00 /-</span>
-            </div>
-        </div>
-    </div>
+</div>
 
-    <div class="col-12 lg:col-6 xl:col-3">
-        <div class="card mb-0 text-center">
-            <div class="flex justify-content-center align-items-center">
-                <img src="assets/demo/images/food/puri.jpg" width="180em" height="150em" style="vertical-align: top"/>
-            </div>
-            <!-- <span class="image-text">IDLI</span> -->
-            <h6 class="text-900">Puri</h6>
-            <div class="col-12 tag">
-                <span class="price-badge price-tag">₹ 70.00 /-</span>
-            </div>
-        </div>
-    </div>
 
-    <div class="col-12 lg:col-6 xl:col-3">
-        <div class="card mb-0 text-center">
-            <div class="flex justify-content-center align-items-center">
-                <img src="assets/demo/images/food/samosa.jpg" width="180em" height="150em" style="vertical-align: top"/>
-            </div>
-            <!-- <span class="image-text">IDLI</span> -->
-            <h6 class="text-900">Samosa</h6>
-            <div class="col-12 tag">
-                <span class="price-badge price-tag">₹ 40.00 /-</span>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-12 lg:col-6 xl:col-3">
-        <div class="card mb-0 text-center">
-            <div class="flex justify-content-center align-items-center">
-                <img src="assets/demo/images/food/sandwich.jpg" width="180em" height="150em" style="vertical-align: top"/>
-            </div>
-            <!-- <span class="image-text">IDLI</span> -->
-            <h6 class="text-900">Sandwich</h6>
-            <div class="col-12 tag">
-                <span class="price-badge price-tag">₹ 70.00 /-</span>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-12 lg:col-6 xl:col-3">
-        <div class="card mb-0 text-center">
-            <div class="flex justify-content-center align-items-center">
-                <img src="assets/demo/images/food/rolls.jpg" width="180em" height="150em" style="vertical-align: top"/>
-            </div>
-            <!-- <span class="image-text">IDLI</span> -->
-            <h6 class="text-900">Veg Spring Rolls</h6>
-            <div class="col-12 tag">
-                <span class="price-badge price-tag">₹ 90.00 /-</span>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-12 lg:col-6 xl:col-3">
-        <div class="card mb-0 text-center">
-            <div class="flex justify-content-center align-items-center">
-                <img src="assets/demo/images/food/milkshake.jpg" width="180em" height="150em" style="vertical-align: top"/>
-            </div>
-            <!-- <span class="image-text">IDLI</span> -->
-            <h6 class="text-900">Chocolate Milkshake</h6>
-            <div class="col-12 tag">
-                <span class="price-badge price-tag">₹ 50.00 /-</span>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-12 lg:col-6 xl:col-3">
-        <div class="card mb-0 text-center">
-            <div class="flex justify-content-center align-items-center">
-                <img src="assets/demo/images/food/coffee.jpg" width="180em" height="150em" style="vertical-align: top"/>
-            </div>
-            <!-- <span class="image-text">IDLI</span> -->
-            <h6 class="text-900">Coffee</h6>
-            <div class="col-12 tag">
-                <span class="price-badge price-tag">₹ 30.00 /-</span>
-            </div>
-        </div>
-    </div>
-
+<div class="card title-card-with-time">
+    <h2 class="text-800 font-bold text-xl lg:text-xl">Hi Ryan, SI12345B</h2>
+    <h4 class="text-800 font-bold text-xl lg:text-xl">Currency Limit : ₹ 2000 /-</h4>
 </div>
