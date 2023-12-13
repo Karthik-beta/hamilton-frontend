@@ -2,9 +2,10 @@
 
     <div class="col-12 lg:col-6 xl:col-8">
 
-        <div class="grid">
+        <div class="scroll-container" style="max-height: 100vh; overflow-y: auto;">
+            <div class="grid">
+                <div class="col-12 lg:col-6 xl:col-4" *ngFor="let item of foodItems">
 
-            <div class="col-12 lg:col-6 xl:col-4" *ngFor="let item of foodItems">
                 <div class="card mb-0 text-center">
                     <div class="flex justify-content-center align-items-center">
                         <img src="assets/demo/images/food/{{ item.image }}.jpg" width="180em" height="150em" style="vertical-align: top"/>
@@ -15,6 +16,7 @@
                         <span class="price-badge price-tag">₹ {{ item.price }} /-</span>
                     </div>
                     <p-button label="Add" icon="pi pi-plus" size="small"></p-button>
+                </div>
                 </div>
             </div>
 
