@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, HostListener } from '@angular/core';
 import { LayoutService } from "../service/app.layout.service";
 import { MenuService } from "../app.menu.service";
 
@@ -102,4 +102,27 @@ export class AppConfigComponent {
     applyScale() {
         document.documentElement.style.fontSize = this.scale + 'px';
     }
+
+
+    @HostListener('document:keydown', ['$event'])
+    handleKeyboardEvent(event: KeyboardEvent) {
+        // Check if the event target is not an input or textarea to avoid conflicts
+        if (!(event.target instanceof HTMLInputElement) && !(event.target instanceof HTMLTextAreaElement)) {
+            // Handle keyboard shortcuts
+            switch (event.key) {
+                case '-':
+                case '_':
+                    this.decrementScale();
+                    break;
+                case '=':
+                case '+':
+                    this.incrementScale();
+                    break;
+                // Add more cases for other shortcuts if needed
+            }
+        }
+    }
+
+
+
 }
