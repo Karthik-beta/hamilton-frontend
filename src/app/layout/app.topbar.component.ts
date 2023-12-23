@@ -1,9 +1,12 @@
-import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild, HostListener, AfterViewInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { LayoutService } from "./service/app.layout.service";
-import { Subscription } from 'rxjs';
 import { SharedService } from 'src/app/shared.service';
-import { MenuModule } from 'primeng/menu';
+import { Observable, interval, Subscription } from 'rxjs';
+import { map } from 'rxjs/operators';
+
+import { FullscreenService } from '../fullscreen.service';
+import { TimeComponent } from '../components/microfunctions/time/time.component';
 
 @Component({
     selector: 'app-topbar',
@@ -14,6 +17,7 @@ export class AppTopBarComponent implements OnInit {
     // items!: MenuItem[];
 
     @ViewChild('menubutton') menuButton!: ElementRef;
+    // @ViewChild('menubutton', { static: false }) menuButton: ElementRef;
 
     @ViewChild('topbarmenubutton') topbarMenuButton!: ElementRef;
 
@@ -23,7 +27,53 @@ export class AppTopBarComponent implements OnInit {
 
     settings_items: MenuItem[] | undefined;
 
-    constructor(public layoutService: LayoutService, private service: SharedService) { }
+    constructor(public layoutService: LayoutService, private service: SharedService, private el: ElementRef, private fullscreenService: FullscreenService) { }
+
+
+    currentDate$: Observable<Date>;
+    private subscription: Subscription;
+
+    ngOnDestroy() {
+        // Unsubscribe from the observable to avoid memory leaks
+        this.subscription.unsubscribe();
+      }
+
+      // Declare the currentDate property to hold the current date
+      currentDate: Date;
+
+
+    isFullscreen = false;
+
+    toggleFullscreen(): void {
+        this.fullscreenService.toggleFullscreen();
+        this.isFullscreen = !this.isFullscreen;
+    }
+
+    @HostListener('document:keydown', ['$event'])
+    handleKeyboardEvent(event: KeyboardEvent): void {
+        if (event.key === 'f') {
+        this.toggleFullscreen();
+        }
+
+        if (event.key.toLowerCase() === 't' || event.code.toLowerCase() === 'keyt') {
+            this.layoutService.onMenuToggle();
+        }
+
+        if (event.key.toLowerCase() === 'r' || event.code.toLowerCase() === 'keyr') {
+            this.layoutService.onMenuToggle();
+            this.toggleFullscreen();
+        }
+    }
+
+    // toggleFullscreen() {
+    //     const elem = this.el.nativeElement.querySelector('.layout-topbar');
+
+    //     if (document.fullscreenElement) {
+    //       document.exitFullscreen();
+    //     } else {
+    //       elem.requestFullscreen();
+    //     }
+    //   }
 
 
     databaseStatus: string = '';
@@ -70,5 +120,17 @@ export class AppTopBarComponent implements OnInit {
             this.databaseStatus = 'Database connection error: ' + error.error.message;
           }
         });
-      }
+
+        // Create an observable that emits the current date every second
+      this.currentDate$ = interval(1000).pipe(
+        // Use the map operator to transform the emitted value to the current date
+        map(() => new Date())
+      );
+
+      // Subscribe to the observable and update the current date property
+      this.subscription = this.currentDate$.subscribe(date => {
+        this.currentDate = date;
+      });
+
+    }
 }

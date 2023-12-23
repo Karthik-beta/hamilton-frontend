@@ -56,7 +56,7 @@ export class AppMenuComponent implements OnInit {
                             {
                                 label: 'Attendance Regularization', icon: 'fa-solid fa-people-roof',
                                 items: [
-                                    { label: 'Manual Attendance Management', icon: 'fa-solid fa-fingerprint' },
+                                    { label: 'Missed Punch Management', icon: 'fa-solid fa-fingerprint' },
                                     { label: 'Leave Management', icon: 'fa-solid fa-calendar-days' },
                                     { label: 'Compensatory Off Management', icon: 'fa-solid fa-calendar-plus' },
                                     { label: 'On Duty Management', icon: 'fa-solid fa-calendar-minus' },

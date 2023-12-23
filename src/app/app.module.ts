@@ -40,6 +40,7 @@ import { DockModule } from 'primeng/dock';
 import { ProgressBarModule } from 'primeng/progressbar';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ToastModule } from 'primeng/toast';
+import { TooltipModule } from 'primeng/tooltip';
 
 
 import { MaterialComponent } from './components/wip/material/material.component';
@@ -159,6 +160,7 @@ import { FoodPriceComponent } from './components/canteen/food-price/food-price.c
         ProgressBarModule,
         ConfirmDialogModule,
         ToastModule,
+        TooltipModule,
     ],
     providers: [
         { provide: LocationStrategy, useClass: HashLocationStrategy },

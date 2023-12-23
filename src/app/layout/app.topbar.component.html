@@ -28,7 +28,19 @@
             <!-- <div class="flex justify-content-center align-items-center" style="background-color: #2A323D;">
                 <img src="assets/layout/images/Hamilton1.png" alt="logo" width="80%" height="80%">
             </div> -->
-        <button class="p-link layout-topbar-button">
+
+        <button pButton [pTooltip]="isFullscreen ? 'Exit full screen (f)' : 'Full screen (f)'" tooltipPosition="bottom" class="p-link layout-topbar-button" (click)="toggleFullscreen()">
+            <i [ngClass]="{'fa-expand': !isFullscreen, 'fa-compress': isFullscreen}" class="fas"></i>
+            <span>{{ isFullscreen ? 'Exit Fullscreen' : 'Fullscreen' }}</span>
+        </button>
+
+        <ng-template #tooltipContent>
+            <div class="flex align-items-center">
+                <span>{{ isFullscreen ? 'Exit Fullscreen' : 'Fullscreen(f)' }}</span>
+            </div>
+        </ng-template>
+
+        <button class="p-link layout-topbar-button" [pTooltip]="databaseStatus === 'Database Connected.' ? 'Database is connected' : 'Database disconnected'" tooltipPosition="bottom">
             <!-- <img src="assets/layout/images/database.png" style="height:20px; width: 20px; vertical-align: bottom;" alt="Connected GIF"> -->
             <i class="pi pi-database mr-1"></i>
             <div *ngIf="databaseStatus === 'Database Connected.'">
@@ -44,17 +56,17 @@
                 </div>
             </div>
         </button>
-        <button class="p-link layout-topbar-button">
+        <button class="p-link layout-topbar-button" pTooltip="Notifications" tooltipPosition="bottom">
             <i class="pi pi-bell"></i>
             <span>Alerts</span>
         </button>
-        <button class="p-link layout-topbar-button">
+        <button class="p-link layout-topbar-button" pTooltip="Profile" tooltipPosition="bottom">
             <i class="pi pi-user"></i>
             <span>Profile</span>
         </button>
         <!-- <button class="p-link layout-topbar-button" [routerLink]="'/documentation'"> -->
         <div>
-            <button class="p-link layout-topbar-button">
+            <button class="p-link layout-topbar-button" pTooltip="Settings" tooltipPosition="bottom">
                 <i class="pi pi-cog"></i>
                 <span>Settings</span>
             </button>
@@ -67,5 +79,9 @@
                 </ng-container>
             </button> -->
         </div>
+        <!-- <button class="p-link  text-center text-800 font-bold justify-content-center align-items-center">
+            <div>{{ currentDate | date:'h:mm a' }}</div>
+            <div>{{ currentDate | date:'dd/MM/yyyy' }}</div>
+        </button> -->
     </div>
 </div>
