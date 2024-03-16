@@ -77,47 +77,47 @@
             </ng-template>
             <ng-template pTemplate="header">
                 <tr>
-                    <th style="min-width: 12rem">
+                    <th style="min-width: auto">
                         <div class="flex justify-content-between align-items-center">
                             Plant
                         </div>
                     </th>
-                    <th style="min-width: 12rem">
+                    <th style="min-width: auto">
                         <div class="flex justify-content-between align-items-center">
                             Shopfloor
                         </div>
                     </th>
-                    <th style="min-width: 12rem">
+                    <th style="min-width: auto">
                         <div class="flex justify-content-between align-items-center">
                             Assemblyline
                         </div>
                     </th>
-                    <th style="min-width: 12rem">
+                    <th style="min-width: auto">
                         <div class="flex justify-content-between align-items-center">
                             Machine ID
                         </div>
                     </th>
-                    <th style="min-width: 14rem">
+                    <th style="min-width: auto">
                         <div class="flex justify-content-between align-items-center">
                             Status
                         </div>
                     </th>
-                    <th style="min-width: 14rem">
+                    <th style="min-width: auto">
                         <div class="flex justify-content-between align-items-center">
                             Date
                         </div>
                     </th>
-                    <th style="min-width: 12rem">
+                    <th style="min-width: auto">
                         <div class="flex justify-content-between align-items-center">
                             Current Shift
                         </div>
                     </th>
-                    <th style="min-width: 12rem">
+                    <th style="min-width: auto">
                         <div class="flex justify-content-between align-items-center">
                             Total On Time
                         </div>
                     </th>
-                    <th style="min-width: 12rem">
+                    <th style="min-width: auto">
                         <div class="flex justify-content-between align-items-center">
                             Total Idle Time
                         </div>
@@ -128,12 +128,12 @@
                     <th>
                         Total Target
                     </th>
-                    <th style="min-width: 12rem">
+                    <th style="min-width: auto">
                         <div class="flex justify-content-between align-items-center">
                             Overall Performance
                         </div>
                     </th>
-                    <th style="min-width: 12rem">
+                    <th style="min-width: auto">
                         <div class="flex justify-content-between align-items-center">
                             Overall Gap
                         </div>
@@ -158,50 +158,50 @@
             </ng-template>
             <ng-template pTemplate="body" let-item>
                 <tr>
-                    <td>
+                    <td style="min-width: auto; white-space: nowrap;">
                         {{ item.plant }}
                     </td>
-                    <td>
+                    <td style="min-width: auto; white-space: nowrap;">
                         {{ item.shopfloor }}
                     </td>
-                    <td>
+                    <td style="min-width: auto; white-space: nowrap;">
                         {{ item.assemblyline }}
                     </td>
-                    <td>
+                    <td style="min-width: auto; white-space: nowrap;">
                         <img src="assets/demo/images/machines/milling-machine.jpg" width="32" style="vertical-align: middle"/>
                         <span class="image-text ml-2">{{ item.machine_id }}</span>
                     </td>
-                    <td>
+                    <td style="min-width: auto; white-space: nowrap;">
                         <span [class]="'stat-badge stat-' + getStatusClass(status)">{{ status }}</span>
                     </td>
-                    <td>
+                    <td style="min-width: auto; white-space: nowrap;">
                         {{ currentDate | date }}
                     </td>
-                    <td>
+                    <td style="min-width: auto; white-space: nowrap;">
                         {{ currentShift }}
                     </td>
-                    <td>
+                    <td style="min-width: auto; white-space: nowrap;">
                         {{ totalOnTime }}
                     </td>
-                    <td>
+                    <td style="min-width: auto; white-space: nowrap;">
                         {{ totalIdleTime }}
                     </td>
-                    <td>
+                    <td style="min-width: auto; white-space: nowrap;">
                         {{ totalActual }}
                     </td>
-                    <td>
+                    <td style="min-width: auto; white-space: nowrap;">
                         {{ totalTarget }}
                     </td>
-                    <td>
+                    <td style="min-width: auto; white-space: nowrap;">
                         <p-progressBar [value]="averagePerformance" [showValue]="true" [style]="{'color': 'green', 'font-size': 'small'}"></p-progressBar>
                     </td>
                     <td [ngStyle]="getBackgroundColorStyleForGap(totalGapNumber)">
                         {{ totalGapNumber }}
                     </td>
-                    <td>
+                    <td style="min-width: auto; white-space: nowrap;">
                         {{ expectedEndDate }}
                     </td>
-                    <td>
+                    <td style="min-width: auto; white-space: nowrap;">
                         {{ assignedStartDate }}
                     </td>
                 </tr>
@@ -226,10 +226,13 @@
         <ng-template pTemplate="header">
           <tr class="text-size header-row">
             <th scope="col">Product ID</th>
+            <th acope="col">Lot/Batch</th>
             <th scope="col">Shift </th>
             <!-- <th>Date</th> -->
             <th scope="col">M/C On Hours</th>
             <th scope="col">M/C Idle Hours</th>
+            <th scope="col">M/C Idle Reason</th>
+            <th scope="col">M/C Break</th>
             <th scope="col">Actual</th>
             <th scope="col">Target</th>
             <th scope="col">Performance</th>
@@ -241,10 +244,13 @@
         <ng-template pTemplate="body" let-dataItem>
           <tr class="text-size data-row text-900">
             <td>AQUA 1000ml</td>
+            <td></td>
             <td>{{ dataItem.time }}</td>
             <!-- <td>{{ dataItem.date }}</td> -->
-            <td style="width: auto;">{{ dataItem.on_time }}</td>
-            <td style="width: auto;">{{ dataItem.idle_time }}</td>
+            <td style="width: auto;">{{ dataItem.on_time | number: '1.2-2' }}</td>
+            <td style="width: auto;">{{ dataItem.idle_time | number: '1.2-2' }}</td>
+            <td></td>
+            <td></td>
             <td>{{ dataItem.actual }}</td>
             <td>{{ dataItem.target}}</td>
             <td [ngStyle]="getBackgroundColorStyle(dataItem.performance)">{{ dataItem.performance }} %</td>

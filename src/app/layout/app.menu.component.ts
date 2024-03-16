@@ -80,27 +80,6 @@ export class AppMenuComponent implements OnInit {
             },
 
             {
-                label: 'UTILIZATION MANAGEMENT',
-                items: [
-                    {
-                        label: 'Utilization Management', icon: 'fa-solid fa-cogs',
-                        items: [
-                            {
-                                label: 'Dashboard', icon: 'fa-solid fa-tachometer',
-                                items: [
-                                    { label: 'Cafeteria', icon: 'fa-solid fa-utensils', routerLink: ['/canteen'] },
-                                    { label: 'Tuck Shop', icon: 'fa-solid fa-shop' },
-                                    { label: 'Stationary', icon: 'fa-solid fa-book' },
-                                    { label: 'Medical Store', icon: 'fa-solid fa-house-medical' },
-                                    { label: 'Clothing', icon: 'fa-solid fa-shirt' },
-                                ]
-                            },
-                        ]
-                    }
-                ]
-            },
-
-            {
                 label: 'Production Andon',
                 items: [
                         {
@@ -168,10 +147,65 @@ export class AppMenuComponent implements OnInit {
                 ]
             },
 
+            {
+                label: 'Work in Progress',
+                items: [
+                    {
+                        label: 'Assemblyline', icon: 'fa-solid fa-cogs',
+                        items: [
+                            {
+                                label: 'Line 1', icon: 'fa-solid fa-industry',
+                                items: [
+                                    {
+                                        label: 'Production Performance', icon: 'fa-solid fa-tachometer-alt',
+                                        items: [
+                                            { label: 'Daily Shift Target', icon: 'fa-solid fa-bullseye', routerLink: ['/daily_target'] },
+                                            { label: 'Weekly Targets', icon: 'fa-solid fa-bullseye', routerLink: ['/weekly_target'] },
+                                            { label: 'Month Targets', icon: 'fa-solid fa-bullseye', routerLink: ['/monthly_target'] },
+                                        ]
+                                    },
+                                    {
+                                        label: 'Quality Inspection', icon: 'fa-solid fa-binoculars',
+                                        items: [
+                                            { label: 'Breakage Total Quality', icon: 'fa-solid fa-balance-scale', routerLink: ['/quality_inspection'] },
+                                            { label: 'Module Defects & Low Power Rejection', icon: 'fa-solid fa-exclamation-triangle', routerLink: ['/quality_inspection'] },
+                                        ]
+                                    },
+                                    {
+                                        label: 'Shift Incharge', icon: 'fa-solid fa-user-tie',
+                                        items: [
+                                            { label: 'Performance', icon: 'fa-solid fa-tachometer-alt', routerLink: ['/quality_inspection'] },
+                                            { label: 'Performance - Cell Breakage %', icon: 'fa-solid fa-chart-bar', routerLink: ['/quality_inspection'] },
+                                            { label: 'Output - Rework Laminates', icon: 'fa-solid fa-sync-alt', routerLink: ['/quality_inspection'] },
+                                            { label: 'Output - Performance at Layup', icon: 'fa-solid fa-chart-line', routerLink: ['/quality_inspection'] },
+                                        ]
+                                    },
+                                ]
+                            },
+                        ]
+                }
+                ]
+            },
+
             //OEE
             {
                 items: [
                     { label: 'OEE', icon: 'fa-solid fa-chart-line', routerLink: ['/oee_report'] }
+                ]
+            },
+
+            {
+                label: 'Utility Management',
+                items: [
+                    {
+                        label: 'Utility Management', icon: 'fa-solid fa-cogs',
+                        items: [
+                            { label: 'Tool Management', icon: 'fa-solid fa-toolbox'},
+                            { label: 'Calibration Management', icon: 'fa-solid fa-ruler-combined' },
+                            { label: 'Energy Management', icon: 'fa-solid fa-bolt' },
+                            { label: 'Store Management', icon: 'fa-solid fa-store' },
+                        ]
+                    }
                 ]
             },
 

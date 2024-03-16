@@ -252,6 +252,9 @@ export class ProdMachinewiseComponent implements OnInit{
 
       getStatusClass(status: string): string {
         // Logic to handle 'No Response' and other statuses
+        if (status === null || status === undefined) {
+            return 'NoResponse';
+        }
         if (status === 'No Response') {
             return 'NoResponse';
         }
@@ -267,7 +270,7 @@ export class ProdMachinewiseComponent implements OnInit{
     }
 
 
-      status: string="No Response";
+      status: string="";
 
       getMachineStatus() {
         // Use startWith to trigger an initial HTTP request
@@ -277,20 +280,29 @@ export class ProdMachinewiseComponent implements OnInit{
           switchMap(() => this.service.getProductionAndon()),
           // Use distinctUntilChanged to filter out repeated values
           distinctUntilChanged((prev, curr) => JSON.stringify(prev) === JSON.stringify(curr))
-        ).subscribe((data: any) => {
-        //   this.status = data.map(item => item.r);
-        this.status = data.map(item => {
-            if (item.r === 'R') {
-              return 'Active';
-            } else if (item.r === 'I') {
-              return 'Idle';
-            } else {
-              return 'No Response';
+        ).subscribe({
+            next: (data: any) => {
+                // Handle received data
+                this.status = data.map(item => {
+                    if (item.r === 'R') {
+                        return 'Active';
+                    } else if (item.r === 'I') {
+                        return 'Idle';
+                    } else {
+                        return 'No Response';
+                    }
+                });
+                console.log("String", this.status);
+            },
+            error: (error) => {
+                // Handle errors
+                console.error('Error fetching machine status:', error);
+                // Set status to 'No Response' in case of error
+                this.status = 'No Response';
             }
-          });
-        //   console.log("String",this.status);
         });
-      }
+    }
+
 
     getBackgroundColorStyle(performance: number): any {
         let backgroundColor = '';
@@ -633,7 +645,9 @@ export class ProdMachinewiseComponent implements OnInit{
 
         // Create a function to add all the gap values from above
         const totalIdleTime = gaps.reduce((sum, idle_time) => sum + idle_time, 0);
-        this.totalIdleTime = totalIdleTime;
+        // this.totalIdleTime = totalIdleTime;
+        // Round off the total idle time to up to two decimal places
+        this.totalIdleTime = parseFloat(totalIdleTime.toFixed(2));
 
     }
 
