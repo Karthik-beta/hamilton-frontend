@@ -81,6 +81,9 @@ import { DigitalQualityInspectionComponent } from './components/quality/digital-
 import { MachineDetailQuality2Component } from './components/quality/machine-detail-quality2/machine-detail-quality2.component';
 import { SoloPlantComponent } from './components/production/solo-plant/solo-plant.component';
 import { SoloShopfloorComponent } from './components/production/solo-shopfloor/solo-shopfloor.component';
+import { DailyTargetComponent } from './components/report2/daily-target/daily-target.component';
+import { WeeklyTargetComponent } from './components/report2/weekly-target/weekly-target.component';
+import { MonthlyTargetComponent } from './components/report2/monthly-target/monthly-target.component';
 
 
 
@@ -205,7 +208,12 @@ import { SoloShopfloorComponent } from './components/production/solo-shopfloor/s
                     { path: 'batch', component: BatchComponent },
                     { path: 'po_no', component: PoNoComponent },
                     { path: 'QC_check_types', component: QcCheckTypeComponent },
-                    { path: 'QC_defect_type', component: QcDefectTypeComponent}
+                    { path: 'QC_defect_type', component: QcDefectTypeComponent},
+
+                    // Reports 2
+                    { path: 'daily_target', component: DailyTargetComponent },
+                    { path: 'weekly_target', component: WeeklyTargetComponent },
+                    { path: 'monthly_target', component: MonthlyTargetComponent },
                 ]
             },
             { path: 'auth', loadChildren: () => import('./demo/components/auth/auth.module').then(m => m.AuthModule) },

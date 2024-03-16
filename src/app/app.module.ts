@@ -122,6 +122,9 @@ import { DigitalQualityInspectionComponent } from './components/quality/digital-
 import { MachineDetailQuality2Component } from './components/quality/machine-detail-quality2/machine-detail-quality2.component';
 import { SoloPlantComponent } from './components/production/solo-plant/solo-plant.component';
 import { SoloShopfloorComponent } from './components/production/solo-shopfloor/solo-shopfloor.component';
+import { DailyTargetComponent } from './components/report2/daily-target/daily-target.component';
+import { WeeklyTargetComponent } from './components/report2/weekly-target/weekly-target.component';
+import { MonthlyTargetComponent } from './components/report2/monthly-target/monthly-target.component';
 
 
 
@@ -141,7 +144,7 @@ import { SoloShopfloorComponent } from './components/production/solo-shopfloor/s
         QualityDashboardComponent, ProdPlantwiseComponent, ProdAssemblylinewiseComponent, OeeReportComponent, ProdPlanReportComponent,
         ProdLineConfigComponent, ProdAndonReportComponent, DailyInfoComponent, MonthlyInfoComponent, QualityManagementReportComponent,
         ProdInfoComponent, SkillMatrixComponent, BatchComponent, PoNoComponent, ShiftConfigComponent, MachineDetailsComponent,
-        QcCheckTypeComponent, ProdStatsComponent, FoodPriceComponent, SoloAssemblylineComponent, AddEditSoloAssemblylineComponent, QcDefectTypeComponent, QualityInspectionComponent, SpellAssemblylineComponent, AddEditSpellAssemblylineComponent, MachineDetailQualityComponent, DigitalQualityInspectionComponent, MachineDetailQuality2Component, SoloPlantComponent, SoloShopfloorComponent,
+        QcCheckTypeComponent, ProdStatsComponent, FoodPriceComponent, SoloAssemblylineComponent, AddEditSoloAssemblylineComponent, QcDefectTypeComponent, QualityInspectionComponent, SpellAssemblylineComponent, AddEditSpellAssemblylineComponent, MachineDetailQualityComponent, DigitalQualityInspectionComponent, MachineDetailQuality2Component, SoloPlantComponent, SoloShopfloorComponent, DailyTargetComponent, WeeklyTargetComponent, MonthlyTargetComponent,
     ],
     imports: [
         AppRoutingModule,
